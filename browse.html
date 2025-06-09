@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnEz / Browse Topics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="browse">
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-left">
+                <li><a href="./home.html">LearnEz</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li class="dropdown">
+                    <a href="">Topics</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./browse.html">Browse Topics</a></li>
+                        <li><a href="./book.html">Bookmarks</a></li>
+                        <li><a href="">Contribute</a></li>
+                    </ul>
+                </li>
+                <li><a href="">About</a></li>
+                <li><a href="" id="open-profile">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="browse-container">
+
+        <div class="browse-main">
+            <h1 class="browse-title">Browse Topics</h1>
+
+            <div class="search-filter-row">
+                <input type="text" class="search-bar" placeholder="Search topics..." />
+                <button class="filter-btn">Filter</button>
+            </div>
+
+            <div class="browse-cards">
+                <div class="browse-card" data-title="Topic 1" data-description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium consequatur omnis sequi temporibus obcaecati perferendis fuga, vitae vero autem commodi architecto aut magnam suscipit cumque inventore. Quos labore iste illo!" data-img="./assets/placeholder-image.jpg">
+                    <img src="./assets/placeholder-image.jpg" class="card-img" alt="Topic 1">
+                    <div class="card-text">
+                        <h3>Topic 1</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium consequatur omnis sequi temporibus obcaecati perferendis fuga, vitae vero autem commodi architecto aut magnam suscipit cumque inventore. Quos labore iste illo!</p>
+                    </div>
+                </div>
+
+                <div class="browse-card" data-title="Topic 2" data-description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, quia reprehenderit accusantium rerum placeat, eveniet distinctio reiciendis voluptas nemo pariatur, voluptatem eos sequi. Illum quaerat atque voluptates commodi aperiam suscipit." data-img="./assets/placeholder-image.jpg">
+                    <img src="./assets/placeholder-image.jpg" class="card-img" alt="Topic 2">
+                    <div class="card-text">
+                        <h3>Topic 2</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, quia reprehenderit accusantium rerum placeat, eveniet distinctio reiciendis voluptas nemo pariatur, voluptatem eos sequi. Illum quaerat atque voluptates commodi aperiam suscipit.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="browse-sidebar">
+        <h2>Archives</h2>
+        <ul class="archives-list">
+            <li><a href="#2025">2025</a></li>
+            <li><a href="#2024">2024</a></li>
+            <li><a href="#2023">2023</a></li>
+            <li><a href="#2022">2022</a></li>
+        </ul>
+        </div>
+
+  </div>
+
+<div class="bookmark-overlay" id="bookOverlay">
+  <div class="book-card">
+    <img src="" alt="Topic Image" class="popup-img" id="popupImage" />
+    <div class="popup-text" id="popupDescription"></div>
+    <div class="popup-buttons">
+      <button class="btn btn-add" id="btnAddBookmark">Add to Bookmark</button>
+      <button class="btn btn-cancel" id="btnCancelPopup">Cancel</button>
+    </div>
+  </div>
+</div>
+    
+
+<div id="popupOverlay" class="popup-overlay hidden">
+    <div class="popup-card">
+        <span id="closePopupBtn" class="popup-close">&times;</span>
+        <img src="./assets/profile.png" alt="Profile Picture" class="profile-img" />
+        <h2>John Doe</h2>
+        <p>Learner</p>
+        <p>Email: john.doe@example.com</p>
+        <p>Location: San Francisco, CA</p>
+    </div>
+</div>
+
+<div id="successPopup" class="success-popup hidden">Bookmark added!</div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>

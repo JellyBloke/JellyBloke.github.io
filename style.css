@@ -1,0 +1,560 @@
+@font-face {
+    font-family: Poppins-Black;
+    src: url(./assets/Poppins-Black.ttf) format('truetype');
+
+    font-family: Montserrat-Regular;
+    src: url(./assets/Montserrat-Regular.ttf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat-Regular';
+    background-image: url('./assets/cartoon-cloud-sky-background-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: dodgerblue;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 60px;
+}
+
+.nav-left,
+.nav-right {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-left li a {
+    font-family: 'Poppins-Black';
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.nav-left li,
+.nav-right li {
+    position: relative;
+}
+
+.nav-left a,
+.nav-right a {
+    display: block;
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.nav-right a:hover{
+    background-color: white;
+    color: dodgerblue;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: dodgerblue;
+    min-width: 160px;
+    list-style: none;
+    z-index: 1000;
+}
+
+.dropdown-menu li a {
+    padding: 12px 16px;
+    white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+#topic-starter{
+    color: dodgerblue;
+    font-style: italic;
+}
+
+#sidebar-starter{
+    color: dodgerblue;
+    font-style: italic;
+}
+
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px 20px 50px;
+}
+
+.main-dash-container{
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main-card {
+  flex: 2;
+  border: 2px solid dodgerblue;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.main-card:hover {
+  transform: scale(1.02);
+}
+
+.main-card a.card-content {
+  display: block;
+  padding: 30px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-banner {
+  width: 100%;           
+  max-height: 150px;     
+  object-fit: cover;     
+  border-radius: 12px 12px 0 0; 
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: dodgerblue;
+}
+
+.card-description {
+  font-size: 16px;
+  color: #555;
+}
+
+.sidebar-container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 50px;
+    gap: 20px;
+}
+
+.sidebar-card {
+    min-height: 120px;
+  border: 3px solid dodgerblue;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.sidebar-card .card-content {
+  padding: 20px;
+}
+
+.sidebar-horizontal {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.sidebar-banner {
+  width: 120px;         
+  height: 100%;
+  border-radius: 8px 0 0 8px;   
+  object-fit: cover;
+}
+
+.sidebar-text h3 {
+  margin-bottom: 4px;
+  color: dodgerblue;
+}
+
+.sidebar-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-card {
+  background: white;
+  border: 3px solid dodgerblue;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popup-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  color: dodgerblue;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid dodgerblue;
+  margin: 0 auto;
+}
+
+.hidden{
+    display: none;
+}
+
+.bookmarks-container {
+  max-width: 100%;
+  padding: 40px 60px;
+}
+
+.bookmarks-title {
+  margin-bottom: 20px;
+  color: dodgerblue;
+  font-size: 32px;
+}
+
+.search-bar {
+  margin-bottom: 30px;
+  padding: 10px 16px;
+  font-size: 16px;
+  width: 300px;
+  border: none;
+  border-radius: 8px;
+  background-color: transparent;
+  outline: none;
+  box-shadow: inset 0 0 0 1px #ccc;
+  transition: box-shadow 0.2s;
+}
+
+.search-bar:focus {
+  box-shadow: inset 0 0 0 2px;
+  background-color: lightblue;
+}
+
+.cards-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.bookmark-card {
+  background-color: #fff;
+  border: 2px solid dodgerblue;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 20px;
+  width: 220px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.bookmark-card:hover {
+  transform: scale(1.03);
+}
+
+.bookmark-card h3 {
+  margin-bottom: 10px;
+  color: dodgerblue;
+}
+
+.bookmark-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.bookmark-banner {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 12px;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 10px;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: dodgerblue;
+  transition: width 0.3s ease;
+}
+
+.progress-label {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+  text-align: center;
+}
+
+.browse-container {
+  display: flex;
+  padding: 40px 60px;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.browse-main {
+  flex: 3;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.browse-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: dodgerblue;
+}
+
+.search-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.search-bar {
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  flex: 1;
+  min-width: 220px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.browse-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.browse-card {
+  display: flex;
+  background-color: white;
+  border: 2px solid dodgerblue;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.browse-card:hover {
+  transform: scale(1.01);
+}
+
+.card-img {
+  width: 160px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.card-text {
+  padding: 20px;
+  flex: 1;
+}
+
+.card-text h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.browse-sidebar {
+  flex: 1;
+  min-width: 220px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  height: fit-content;
+  align-self: flex-start;
+}
+
+.browse-sidebar h2 {
+  color: dodgerblue;
+  margin-bottom: 15px;
+}
+
+.archives-list {
+  list-style: none;
+}
+
+.archives-list li {
+  margin-bottom: 10px;
+}
+
+.archives-list a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.archives-list a:hover {
+  text-decoration: underline;
+}
+
+.bookmark-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+.bookmark-overlay.active {
+  display: flex;
+}
+.book-card {
+  background: white;
+  border: 3px solid dodgerblue;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 30px;
+  max-width: 480px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+.popup-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.popup-text {
+  font-size: 16px;
+  max-height: 140px;
+  overflow-y: auto;
+}
+.popup-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-add {
+  background: dodgerblue;
+  color: white;
+}
+.btn-cancel {
+  background: #ccc;
+  color: #333;
+}
+
+.success-popup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: dodgerblue;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 99999;
+}
+
+.success-popup.show {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .cards-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bookmark-card {
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .bookmarks-container {
+    padding: 20px;
+  }
+}
